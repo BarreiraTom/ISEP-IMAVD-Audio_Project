@@ -69,7 +69,7 @@ h2 {
 span.description {
   font-weight: 300;
   font-size: 13px;
-  fill: #353535;
+  color: #353535;
 }
 
 .content {
@@ -78,4 +78,60 @@ span.description {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.content > * {
+  width: 50%;
+}
+
+/* -------------------------------- 01 Audio Player ------------------------------------ */
+div.rhap_container {
+  -webkit-box-shadow: none;
+-moz-box-shadow: none;
+box-shadow: none;
+}
+
+/* -------------------------------- 02 Speech to Text ------------------------------------ */
+.label {
+  width: 25%;
+  margin-right: 2%;
+}
+
+#strongLabel {
+  display: block;
+  margin: 15px 0;
+  width: 100%;
+  font-weight: 500;
+}
+
+/* -------------------------------- 03 Text to Speech ------------------------------------ */
+.content > div > div {
+  display: flex;
+  margin-bottom: 10px;
+}
+
+select, textarea {
+  min-width: 73%;
+  width: 73%;
+  max-width: 73%;
+}
+
+select#voices {
+  border: 1px solid black;
+  cursor: pointer;
+}
+
+select#voices option {
+  cursor: pointer;
+}
+
+.content div textarea {
+  min-height: 10vh;
+  height: 10vh;
+  max-height: 20vh;
+  border: 1px solid black;
+}
+
+#speak {
+  margin-left: 27%;
 }

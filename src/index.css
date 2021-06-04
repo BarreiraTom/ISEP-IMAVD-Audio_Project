@@ -58,13 +58,19 @@
   font-family: "montserrat";
 }
 
+label, p {
+  font-size: 13px;
+  font-weight: 300;
+}
+
 .button {
   margin-top: 20px;
 }
 
-.button label {
+.button label, button {
   padding: 10px 20px;
   border: 1px solid black;
+  background-color: transparent;
   text-transform: uppercase;
   font-size: 14px;
   letter-spacing: 1px;
@@ -73,7 +79,7 @@
   cursor: pointer;
 }
 
-  .button label:hover {
+  .button label:hover, button:hover {
     background-color: black;
     color: white;
   }

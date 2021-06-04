@@ -2,25 +2,24 @@ import React, { useState, useEffect, useCallback } from "react";
 
 import './App.css';
 import 'react-h5-audio-player/lib/styles.css';
-import Audio from "./Audio/Audio";
-import SpeechToText from "./SpeechToText/SpeechToText";
-import TextToSpeech from "./TextToSpeech/TextToSpeech";
+import Audio from "./Audio";
+import SpeechToText from "./SpeechToText";
+import TextToSpeech from "./TextToSpeech";
 
 function App() {
   const sections = [
-    { title: 'Audio player', description: 'Load an audio and play it here.', color: '#D2FFEA', element: <Audio /> },
-    { title: 'Speech to text', description: 'Your audio is converted to text.', color: '#DFFFFF', element: <SpeechToText /> },
-    { title: 'Text to speech', description: 'Your text is converted to audio.', color: '#DFEAFF', element: <TextToSpeech /> },
-    { title: 'text compare', description: 'Comparison between text and audio.', color: '#FFFEDF', element: <></> },
-    { title: 'verbal changes', description: 'Change an object’s appearance verbally.', color: '#FFE9DF', element: <></> },
-    { title: 'photo panel', description: 'Change a person’s appearance verbally.', color: '#FFD7D7', element: <></> }
+    { title: 'Audio player', description: 'Load an audio and play it here.', color: '#D2FFEA', element: <Audio />, id: 1 },
+    { title: 'Speech to text', description: 'Your audio is converted to text.', color: '#DFFFFF', element: <SpeechToText />, id: 2 },
+    { title: 'Text to speech', description: 'Your text is converted to audio.', color: '#DFEAFF', element: <TextToSpeech />, id: 3 },
+    { title: 'text compare', description: 'Comparison between text and audio.', color: '#FFFEDF', element: <></>, id: 4 },
+    { title: 'verbal changes', description: 'Change an object’s appearance verbally.', color: '#FFE9DF', element: <></>, id: 5 },
+    { title: 'photo panel', description: 'Change a person’s appearance verbally.', color: '#FFD7D7', element: <></>, id: 6 }
   ];
 
   return (
     <>
-    {
-    sections.map((section, i) =>
-      <section>
+    {sections.map((section, i) =>
+      <section key={section.id}>
         <div className="coloredDiv" style={{backgroundColor: section.color}}> 
           <h1>{'0' + (i + 1)}</h1>
           <div>

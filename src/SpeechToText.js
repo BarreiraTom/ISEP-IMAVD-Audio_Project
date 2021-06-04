@@ -20,14 +20,13 @@ function SpeechToText() {
     return(
         <>
         <div>
-            <textarea
-                value={sttValue}
-                onChange={(event) => setSttValue(event.target.value)}
-            />
+            <label className="label">Record your audio</label>   
             <button onClick={callListen.bind()}>
-                {!listening ? ("🎤") : ("🛑")}
+                {!listening ? ("Record") : ("Stop")}
             </button>
-            {listening && <div>Go ahead I'm listening</div>}
+            <label className="label" id="strongLabel">Your text to speech will appear here:</label>
+            <p>{sttValue}</p>
+            {/*listening && <div>Go ahead I'm listening</div>*/}
         </div>
         </>
     );

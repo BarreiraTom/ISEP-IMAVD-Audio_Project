@@ -1,6 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
-
-import './Audio.css';
+import React, { useState } from "react";
 import 'react-h5-audio-player/lib/styles.css';
 import AudioPlayer from 'react-h5-audio-player';
 
