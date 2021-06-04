@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from "react";
-
 import './App.css';
 import 'react-h5-audio-player/lib/styles.css';
+import BurgerMenu from "./Menu";
 import Audio from "./Audio";
 import SpeechToText from "./SpeechToText";
 import TextToSpeech from "./TextToSpeech";
@@ -18,8 +18,9 @@ function App() {
 
   return (
     <>
+    <BurgerMenu links={sections} />
     {sections.map((section, i) =>
-      <section key={section.id}>
+      <section key={section.id} id={section.id}>
         <div className="coloredDiv" style={{backgroundColor: section.color}}> 
           <h1>{'0' + (i + 1)}</h1>
           <div>
