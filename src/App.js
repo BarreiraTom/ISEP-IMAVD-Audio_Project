@@ -10,6 +10,7 @@ import video from './resources/videoExercises.json';
 import Audio from "./sections/Audio";
 import SpeechToText from "./sections/SpeechToText";
 import TextToSpeech from "./sections/TextToSpeech";
+import TextCompare from "./sections/TextCompare";
 
 
 function App() {
@@ -17,7 +18,7 @@ function App() {
     <Audio />,
     <SpeechToText />,
     <TextToSpeech />,
-    <></>,
+    <TextCompare />,
     <></>,
     <></>
   ];
