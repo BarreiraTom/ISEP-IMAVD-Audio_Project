@@ -5,76 +5,61 @@ import AP from "./components/audioPlayer/audioPlayer";
 import "./App.css";
 import "react-h5-audio-player/lib/styles.css";
 import BurgerMenu from "./components/burgerMenu/Menu";
+import audio from './resources/audioExercises.json';
+import video from './resources/videoExercises.json';
 import Audio from "./sections/Audio";
 import SpeechToText from "./sections/SpeechToText";
 import TextToSpeech from "./sections/TextToSpeech";
 
+
 function App() {
-  const sections = [
-    {
-      title: "Audio player",
-      description: "Load an audio and play it here.",
-      color: "#D2FFEA",
-      element: <Audio />,
-      id: 1,
-    },
-    {
-      title: "Speech to text",
-      description: "Your audio is converted to text.",
-      color: "#DFFFFF",
-      element: <SpeechToText />,
-      id: 2,
-    },
-    {
-      title: "Text to speech",
-      description: "Your text is converted to audio.",
-      color: "#DFEAFF",
-      element: <TextToSpeech />,
-      id: 3,
-    },
-    {
-      title: "text compare",
-      description: "Comparison between text and audio.",
-      color: "#FFFEDF",
-      element: <></>,
-      id: 4,
-    },
-    {
-      title: "verbal changes",
-      description: "Change an object’s appearance verbally.",
-      color: "#FFE9DF",
-      element: <></>,
-      id: 5,
-    },
-    {
-      title: "photo panel",
-      description: "Change a person’s appearance verbally.",
-      color: "#FFD7D7",
-      element: <></>,
-      id: 6,
-    },
+  const audioElements = [
+    <Audio />,
+    <SpeechToText />,
+    <TextToSpeech />,
+    <></>,
+    <></>,
+    <></>
   ];
+
+  audio.exercises.forEach((exercise, i) => {
+    exercise.element = audioElements[i];
+  });
+
+  const videoElements = [
+    <></>,
+    <></>,
+    <></>
+  ];
+
+  video.exercises.forEach((exercise, i) => {
+    exercise.element = videoElements[i];
+  });
+
+  const exercises = audio.exercises.concat(video.exercises);
+
+  console.log(exercises);
 
   return (
     <>
-      <BurgerMenu links={sections} />
-      {sections.map((section, i) => (
-        <section key={section.id} id={section.id}>
+      <BurgerMenu audioLinks={audio} videoLinks={video} />
+      {exercises.map((exercise, i) => (
+        <section key={exercise.id} id={exercise.id}>
           <div
             className="coloredDiv"
-            style={{ backgroundColor: section.color }}
+            style={{ backgroundColor: exercise.color }}
           >
-            <h1>{"0" + (i + 1)}</h1>
+            <h1>{exercise.id.toLocaleString('en-US', { minimumIntegerDigits: 2 })}</h1>
             <div>
-              <h2>{section.title}</h2>
-              <span className="description">{section.description}</span>
+              <h2>{exercise.title}</h2>
+              <span className="description">{exercise.description}</span>
             </div>
           </div>
           <div
             className="content"
             style={{ backgroundColor: i % 2 !== 0 ? "#FAF9F9" : "" }}
           >
-            {section.element}
+            {exercise.element}
           </div>
         </section>
       ))}

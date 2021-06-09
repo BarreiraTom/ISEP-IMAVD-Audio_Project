@@ -1,0 +1,11 @@
+{
+    "exercises": [
+        {
+            "title": "Detect Objects",
+            "description": "Load a video and apply effects to the objects detected.",
+            "color": "#daeace",
+            "element": null,
+            "id": 7
+        }
+    ]
+}

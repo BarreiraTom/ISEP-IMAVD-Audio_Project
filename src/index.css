@@ -89,8 +89,7 @@ label, p {
   opacity: 0;
 }
 
-
-
+/*---------------------------------- Burger Menu ---------------------------------*/
 /* Position and sizing of burger button */
 .bm-burger-button {
   position: fixed;
@@ -132,9 +131,10 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /* General sidebar styles */
 .bm-menu {
-  background: #373a47;
+  background: rgba(0, 0, 0, 0.8);
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
+  overflow: hidden !important;
 }
 
 /* Morph shape necessary with bubble or elastic */
@@ -151,6 +151,38 @@ Note: Beware of modifying this element as it can break the animations - you shou
 /* Individual item */
 .bm-item {
   display: inline-block;
+  margin: 15px 0;
+  color: white;
+  font-size: 16px;
+  text-decoration: none;
+  text-align: center;
+}
+
+  a.audioExercises:hover {
+    color: #6bbbdb;
+  }
+
+  a.videoExercises:hover {
+    color: #b7dbc2;
+  }
+
+p.bm-item {
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+#menuAudio {
+  border-bottom: 1px solid #6bbbdb;
+  color: #6bbbdb;
+}
+
+#menuVideo {
+  margin-top: 80px;
+  border-bottom: 1px solid #b7dbc2;
+  color: #b7dbc2;
 }
 
 /* Styling of overlay */

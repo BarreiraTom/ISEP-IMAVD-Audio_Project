@@ -1,0 +1,46 @@
+{
+    "exercises": [
+        {
+            "title": "Audio Player",
+            "description": "Load an audio and play it here.",
+            "color": "#6bbbdb",
+            "element": null,
+            "id": 1
+          },
+          {
+            "title": "Speech to Text",
+            "description": "Your audio is converted to text.",
+            "color": "#99d5eb",
+            "element": null,
+            "id": 2
+          },
+          {
+            "title": "Text to Speech",
+            "description": "Your text is converted to audio.",
+            "color": "#bcbfe2",
+            "element": null,
+            "id": 3
+          },
+          {
+            "title": "Text Compare",
+            "description": "Comparison between text and audio.",
+            "color": "#d6cdea",
+            "element": null,
+            "id": 4
+          },
+          {
+            "title": "Verbal Changes",
+            "description": "Change an object’s appearance verbally.",
+            "color": "#fae2ef",
+            "element": null,
+            "id": 5
+          },
+          {
+            "title": "Photo Panel",
+            "description": "Change a person’s appearance verbally.",
+            "color": "#fff2cc",
+            "element": null,
+            "id": 6
+          }
+    ]
+}
