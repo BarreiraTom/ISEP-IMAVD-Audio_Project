@@ -1,101 +1,83 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { useSpeechRecognition, useSpeechSynthesis } from 'react-speech-kit';
-import AudioPlayer from 'react-h5-audio-player';
 
-import AP from './components/audioPlayer/audioPlayer'
+import AP from "./components/audioPlayer/audioPlayer";
 
-import './App.css';
-import 'react-h5-audio-player/lib/styles.css';
+import "./App.css";
+import "react-h5-audio-player/lib/styles.css";
+import BurgerMenu from "./components/burgerMenu/Menu";
+import Audio from "./sections/Audio";
+import SpeechToText from "./sections/SpeechToText";
+import TextToSpeech from "./sections/TextToSpeech";
 
 function App() {
-
-  const [audio, setAudio] = useState();
-  const [speechVoice, setSpeechVoice] = useState();
-  const [isRecording, setIsRecording] = useState(false);
-
-  const submitAudio = async (event) => {
-    if (event.target.files && event.target.files[0]) {
-      let audio = event.target.files[0];
-      await setAudio(URL.createObjectURL(audio));
-    }
-  };
-
-
-  const [sttValue, setSttValue] = useState('');
-  const { listen, listening, stop } = useSpeechRecognition({
-    onResult: (result) => {
-      setSttValue(result);
+  const sections = [
+    {
+      title: "Audio player",
+      description: "Load an audio and play it here.",
+      color: "#D2FFEA",
+      element: <Audio />,
+      id: 1,
     },
-  });
- 
-  const [value, setValue] = useState('');
-  const { voices, speak } = useSpeechSynthesis();
-
-  const changeSelectedVoice = e => setSpeechVoice(e.target.selectedIndex);
-
-  const callListen = () => {
-    if(listening){
-      stop();
-    } 
-    listen();
-  }
-  
-  useEffect(() => {
-    console.log(voices);
-  }, [])
+    {
+      title: "Speech to text",
+      description: "Your audio is converted to text.",
+      color: "#DFFFFF",
+      element: <SpeechToText />,
+      id: 2,
+    },
+    {
+      title: "Text to speech",
+      description: "Your text is converted to audio.",
+      color: "#DFEAFF",
+      element: <TextToSpeech />,
+      id: 3,
+    },
+    {
+      title: "text compare",
+      description: "Comparison between text and audio.",
+      color: "#FFFEDF",
+      element: <></>,
+      id: 4,
+    },
+    {
+      title: "verbal changes",
+      description: "Change an object’s appearance verbally.",
+      color: "#FFE9DF",
+      element: <></>,
+      id: 5,
+    },
+    {
+      title: "photo panel",
+      description: "Change a person’s appearance verbally.",
+      color: "#FFD7D7",
+      element: <></>,
+      id: 6,
+    },
+  ];
 
   return (
     <>
-      <input type="file" name="myfile" accept="audio/*" onChange={submitAudio.bind(this)}/>
-      {/* <AudioPlayer
-        src={audio}
-        onPlay={e => console.log("onPlay")}
-      /> */}
-
-      <AP></AP>
-
-
-      <br/><br/><br/>
-
-      <div>
-      <textarea
-        value={sttValue}
-        onChange={(event) => setSttValue(event.target.value)}
-      />
-      <button onClick={callListen.bind()}>
-        {!listening ? ("🎤") : ("🛑")}
-      </button>
-      {listening && <div>Go ahead I'm listening</div>}
-    </div>
-
-    <br/><br/><br/>
-
-    <div>
-    <select name="voices" id="voices" onChange={changeSelectedVoice.bind(this)} >
-      {
-        voices.map((voice,key) => {
-          return (voice.default ? (
-            <option 
-              key={key} 
-              value={voice.lang}
-              selected
-            >{voice.name}</option>
-          ) : (
-            <option 
-              key={key} 
-              value={voice.lang}
-            >{voice.name}</option>
-          ));
-        })
-      }
-    </select>
-
-      <textarea
-        value={value}
-        onChange={(event) => setValue(event.target.value)}
-      />
-      <button onClick={() => speak({ text: value , voice: voices[speechVoice] })}>Speak</button>
-    </div>
+      <BurgerMenu links={sections} />
+      {sections.map((section, i) => (
+        <section key={section.id} id={section.id}>
+          <div
+            className="coloredDiv"
+            style={{ backgroundColor: section.color }}
+          >
+            <h1>{"0" + (i + 1)}</h1>
+            <div>
+              <h2>{section.title}</h2>
+              <span className="description">{section.description}</span>
+            </div>
+          </div>
+          <div
+            className="content"
+            style={{ backgroundColor: i % 2 !== 0 ? "#FAF9F9" : "" }}
+          >
+            {section.element}
+          </div>
+        </section>
+      ))}
     </>
   );
 }
