@@ -1,0 +1,44 @@
+#player{
+    background-color: #EEE;
+    border: #333 1px solid;
+    border-radius: 1rem;
+    min-width: 500px;
+    width: calc(1vw / 3);
+    position: relative;
+    margin: auto;
+}
+
+#timeline{
+    margin: .5rem auto 0;
+    width: 90%;
+    height: 2rem;
+    display: flex;
+}
+
+#timeline input{
+    flex-grow: 1;
+    margin: 0 .5rem;
+    vertical-align: middle;
+}
+
+#timeline label{
+    vertical-align: middle;
+}
+
+#audioControls{
+    margin: .5rem .5rem 0;
+    width: 100%;
+    height: 2rem;
+
+}
+
+#audioControls input{
+    height: 90%;
+    margin: auto .1rem;
+    vertical-align: middle;
+}
+
+#audioVolume{
+    text-align: right;
+    display: inline-block;
+}

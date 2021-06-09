@@ -2,6 +2,8 @@ import React, { useState, useEffect, useCallback } from "react";
 import { useSpeechRecognition, useSpeechSynthesis } from 'react-speech-kit';
 import AudioPlayer from 'react-h5-audio-player';
 
+import AP from './components/audioPlayer/audioPlayer'
+
 import './App.css';
 import 'react-h5-audio-player/lib/styles.css';
 
@@ -45,10 +47,13 @@ function App() {
   return (
     <>
       <input type="file" name="myfile" accept="audio/*" onChange={submitAudio.bind(this)}/>
-      <AudioPlayer
+      {/* <AudioPlayer
         src={audio}
         onPlay={e => console.log("onPlay")}
-      />
+      /> */}
+
+      <AP></AP>
+
 
       <br/><br/><br/>
 
