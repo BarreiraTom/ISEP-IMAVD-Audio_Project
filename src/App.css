@@ -147,6 +147,14 @@ select#voices option {
   align-items: center;
 }
 
+.green{
+  background-color:rgba(0, 185, 0, 0.658);
+}
+
+.red{
+  background-color:rgba(255, 16, 16, 0.658);
+}
+
 
 /* -------------------------------- 06 Photo Panel ------------------------------------ */
 
