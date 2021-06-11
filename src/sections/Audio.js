@@ -21,7 +21,7 @@ function Audio() {
         />
         <div className="button">
           <label for="uploadAudio">Load Audio</label>
-          <input id="uploadAudio" type="file" name="myfile" accept="audio/*" onChange={submitAudio.bind(this)}/>
+          <input id="uploadAudio" type="file" name="myAudioFile" accept="audio/*" onChange={submitAudio.bind(this)}/>
         </div>
       </div>
     </>

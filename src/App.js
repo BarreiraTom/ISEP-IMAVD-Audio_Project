@@ -11,6 +11,7 @@ import Audio from "./sections/Audio";
 import SpeechToText from "./sections/SpeechToText";
 import TextToSpeech from "./sections/TextToSpeech";
 import TextCompare from "./sections/TextCompare";
+import PhotoPanel from "./sections/PhotoPanel";
 
 
 function App() {
@@ -20,7 +21,7 @@ function App() {
     <TextToSpeech />,
     <TextCompare />,
     <></>,
-    <></>
+    <PhotoPanel />
   ];
 
   audio.exercises.forEach((exercise, i) => {

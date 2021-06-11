@@ -13,6 +13,7 @@ function SpeechToText() {
     const callListen = () => {
         if(listening){
           stop();
+          return 0;
         } 
         listen();
     }

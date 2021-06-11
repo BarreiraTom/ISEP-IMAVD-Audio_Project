@@ -64,7 +64,13 @@ label, p {
 }
 
 .button {
+  width: fit-content;
+  position: relative;
   margin-top: 20px;
+}
+.button input {
+  position: absolute;
+  z-index: -1;
 }
 
 .button label, button {
