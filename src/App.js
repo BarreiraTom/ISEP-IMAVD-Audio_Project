@@ -1,6 +1,4 @@
-import React, { useState, useEffect, useCallback } from "react";
-
-import AP from "./components/audioPlayer/audioPlayer";
+import React from "react";
 
 import "./App.css";
 import "react-h5-audio-player/lib/styles.css";
@@ -12,6 +10,7 @@ import SpeechToText from "./sections/SpeechToText";
 import TextToSpeech from "./sections/TextToSpeech";
 import TextCompare from "./sections/TextCompare";
 import PhotoPanel from "./sections/PhotoPanel";
+import VerbalChanges from "./sections/VerbalChanges";
 
 
 function App() {
@@ -20,7 +19,7 @@ function App() {
     <SpeechToText />,
     <TextToSpeech />,
     <TextCompare />,
-    <></>,
+    <VerbalChanges/>,
     <PhotoPanel />
   ];
 

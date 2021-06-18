@@ -48,7 +48,7 @@ function TextCompare() {
             <div>
                 <div>
                     <label className="label">Select your language</label>
-                    <select name="voices" id="voices" onChange={""} >
+                    <select name="voices" id="voices" onChange={() => changeSelectedVoice.bind(this)} >
                         {
                             voices.map((voice, key) => {
                                 return (voice.default ? (
