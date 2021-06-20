@@ -5,7 +5,6 @@ import defaultImage from '../resources/imgs/user.png';
 
 function PhotoPanel() {
 
-
   const voiceActions = ["rotate", "grow", "shrink", "default", "filter", "move"];
 
   const styles = {
@@ -105,8 +104,7 @@ function PhotoPanel() {
     if (!listening) {
       setSttValue('');
     }
-    
-    listen();
+    listen({ lang: "en-US" });
   }
 
   return (

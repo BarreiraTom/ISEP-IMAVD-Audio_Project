@@ -3,7 +3,6 @@ import { useSpeechSynthesis } from 'react-speech-kit';
 
 function TextToSpeech() {
     const [speechVoice, setSpeechVoice] = useState();
-    const [isRecording, setIsRecording] = useState(false);
 
     const [value, setValue] = useState('');
     const { voices, speak } = useSpeechSynthesis();

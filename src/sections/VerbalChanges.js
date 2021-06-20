@@ -92,6 +92,9 @@ function VerbalChanges() {
     const getInstructions = () => {
         if (sttValue === "default") {
             setDuplicatedObjects(objects);
+            setSquareStyle(defaultSquareStyle)
+            setRectangleStyle(defaultRectangleStyle)
+            setCircleStyle(defaultCircleStyle)
         } else {
             let voiceCommand = sttValue.split(" ");
             if (voiceCommand.length === 2 || voiceCommand.length === 3) {

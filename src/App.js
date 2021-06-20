@@ -11,6 +11,7 @@ import TextToSpeech from "./sections/TextToSpeech";
 import TextCompare from "./sections/TextCompare";
 import PhotoPanel from "./sections/PhotoPanel";
 import VerbalChanges from "./sections/VerbalChanges";
+import ObjectDetector from "./sections/ObjectDetector";
 
 
 function App() {
@@ -28,9 +29,7 @@ function App() {
   });
 
   const videoElements = [
-    <></>,
-    <></>,
-    <></>
+    <ObjectDetector />
   ];
 
   video.exercises.forEach((exercise, i) => {
